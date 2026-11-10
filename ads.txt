@@ -1,0 +1,2 @@
+# Replace with your own AdSense publisher ID (the digits after "ca-pub-")
+google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
