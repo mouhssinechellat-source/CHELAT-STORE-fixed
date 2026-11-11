@@ -223,7 +223,7 @@ const appColors = {
 // ==================== Translations ====================
 const I18N = {
     ar: {
-        title: 'CHELAT STORE | متجر تطبيقات وألعاب الأندرويد والآيفون',
+        title: 'CHELLAT STORE | متجر تطبيقات وألعاب الأندرويد والآيفون',
         searchPlaceholder: 'ابحث عن تطبيق...',
         skip: 'انتقل إلى المحتوى',
         heroTitle: 'حمّل أشهر التطبيقات والألعاب بسهولة',
@@ -262,7 +262,7 @@ const I18N = {
         }
     },
     en: {
-        title: 'CHELAT STORE | Android & iPhone Apps and Games Store',
+        title: 'CHELLAT STORE | Android & iPhone Apps and Games Store',
         searchPlaceholder: 'Search for an app...',
         skip: 'Skip to content',
         heroTitle: 'Download the most popular apps and games',
@@ -301,7 +301,7 @@ const I18N = {
         }
     },
     fr: {
-        title: 'CHELAT STORE | Boutique d’applications et jeux Android & iPhone',
+        title: 'CHELLAT STORE | Boutique d’applications et jeux Android & iPhone',
         searchPlaceholder: 'Rechercher une application...',
         skip: 'Aller au contenu',
         heroTitle: 'Téléchargez les applis et jeux les plus populaires',
