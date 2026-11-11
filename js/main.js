@@ -151,6 +151,7 @@ const fileMap = {
     'SnapTube': 'snaptube.png',
     'Opera': 'opera.jpeg',
     'HatGPT': 'hatgpt.jpg',
+   'Koora': 'KoooraLive.jpg',
     
     // Other
     'Uber': 'Uber.jpg',
