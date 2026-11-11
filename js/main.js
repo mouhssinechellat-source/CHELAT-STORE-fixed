@@ -1,4 +1,3 @@
-```javascript
 // ==================== Icon file map (app name -> file in assets/images/icons) ====================
 const fileMap = {
     // Slider Apps
