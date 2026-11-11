@@ -158,6 +158,25 @@ const fileMap = {
     'Fiverr': 'Fiverr - Freelance Service.jpg',
     'Lightroom': 'LightroomideoEditor.png'
 };
+'Roblox': 'roblox.png',
+'Minecraft': 'minecraft.png',
+'Call of Duty': 'callofduty.png',
+'8 Ball Pool': '8ball-pool.png',
+'eFootball PES': 'efootball.png',
+'Subway Surfers': 'subwaysurfers.png',
+'Ludo King': 'ludoking.png',
+'SoundCloud': 'soundcloud.png',
+'Microsoft Office': 'microsoft-office.png',
+'Truecaller': 'truecaller.png',
+'SHAREit': 'shareit.png',
+'eBay': 'ebay.png',
+'Glovo': 'glovo.png',
+'Nike Training': 'niketraining.png',
+'MyFitnessPal': 'myfitnesspal.png',
+'Udemy': 'udemy.png',
+'beIN CONNECT': 'beinconnect.png',
+'Shahid': 'shahid.png',
+'Uber': 'uber.png'};
 
 // ==================== Brand colours used for generated fallback icons ====================
 const appColors = {
