@@ -1,5 +1,5 @@
 /* ==========================================================
-   js/main.js - CHELAT STORE application logic
+   js/main.js - CHELAT-STORY application logic
    ========================================================== */
 'use strict';
 
@@ -10,7 +10,7 @@ const fileMap = {
     'FIFA Mobile': 'Fifa.jpg',
     'Netflix': 'Netflix.png',
     // Social Media
- 'WhatsApp': 'WhatsApp.jpg',
+    'WhatsApp': 'WhatsApp.jpg',
     'Instagram': 'Instagram.jpg',
     'Telegram': 'Telegram.jpg',
     'Snapchat': 'snapchat.jpg',
@@ -30,7 +30,7 @@ const fileMap = {
     'Telegram X': 'telegram_x.jpg',
     'Instagram Lite': 'instagram_lite.jpg',
     'TikTok Lite': 'tiktok_lite.jpg',
-    
+
     // Games
     'Free Fire': 'freefire.jpg',
     'Call of Duty': 'CD.jpg',
@@ -46,7 +46,7 @@ const fileMap = {
     'Asphalt 9': 'Asphalt9.jpg',
     'Snake': 'Snake.jpg',
     'Free Fire MAX': 'freefire_max.jpg',
-    
+
     // Music & Video
     'Spotify': 'Spotify.jpg',
     'YouTube Music': 'YouTube.jpg',
@@ -56,14 +56,14 @@ const fileMap = {
     'MX Player': 'MXPlayer.jpg',
     'InShot': 'InShot.jpg',
     'KineMaster': 'KineMaster.jpg',
-    
+
     // Streaming
     'Shahid': 'Shahid.jpg',
     'OSN+': 'OSN.jpg',
     'Yacine TV': 'yacine-tv.png',
     'beIN CONNECT': 'beIN.jpg',
     'Kooora Live': 'KoooraLive.jpg',
-    
+
     // Tools & Productivity
     'Google Translate': 'Google Translate.jpg',
     'Google Chrome': 'GoogleChrome.jpg',
@@ -83,7 +83,7 @@ const fileMap = {
     'Google': 'google.png',
     'Google Pay': 'google-pay.png',
     'Google Maps': 'google-maps.png',
-    
+
     // Shopping
     'Amazon': 'Amazon.jpg',
     'AliExpress': 'AliExpress.jpg',
@@ -92,58 +92,58 @@ const fileMap = {
     'Temu': 'Temu.jpg',
     'Shopify': 'Shopify.jpg',
     'eBay': 'eBay.jpg',
-    
+
     // Food & Delivery
     'Uber Eats': 'UberEats.jpg',
     'Talabat': 'Talabat.jpg',
     'Glovo': 'Glovo.jpg',
     'Mrsool': 'Mrsool.jpg',
-    
+
     // Finance
     'PayPal': 'paypal.png',
     'Binance': 'binance.png',
     'Western Union': 'western-union.png',
     'Coinbase': 'Coinbase.jpg',
-    
+
     // News
     'Sky News Arabia': 'SkyNews.jpg',
     'Al Arabiya': 'AlArabiya.jpg',
-    
+
     // Health & Fitness
     'MyFitnessPal': 'MyFitnessPal.jpg',
     'Nike Training': 'NikeTraining.jpg',
     'Strava': 'Strava.jpg',
-    
+
     // Education
     'Duolingo': 'Duolingo.jpg',
     'Khan Academy': 'KhanAcademy.jpg',
     'Udemy': 'Udemy.jpg',
-    
+
     // Design & Creativity
     'Canva': 'Canva.jpg',
     'Picsart': 'Picsart.png',
     'Adobe Photoshop': 'AdobePhotoshop.jpg',
-    
+
     // Navigation & Travel
     'Waze': 'Waze.jpg',
     'Booking.com': 'Booking.jpg',
     'Airbnb': 'Airbnb.jpg',
-    
+
     // Security
     'Avast Antivirus': 'Avast.jpg',
     'Norton Security': 'Norton.jpg',
-    
+
     // Religious
     'Quran': 'quran.png',
     'Khatma': 'Khatma.png',
     'Salaat First': 'salaat_first.jpg',
-    
+
     // AI & Assistants
     'ChatGPT': 'hatgpt.jpg',
     'Google Gemini': 'Google-Gemini.jpg',
     'Microsoft Copilot': 'Copilot.jpg',
     'Google Assistant': 'google_assistant.jpg',
-    
+
     // Entertainment
     'Koora': 'Koora.jpg',
     'Ostoura': 'Ostoura.png',
@@ -151,13 +151,15 @@ const fileMap = {
     'SnapTube': 'snaptube.png',
     'Opera': 'opera.jpeg',
     'HatGPT': 'hatgpt.jpg',
-   'Kooora Live': 'KoooraLive.png',
-    
+
     // Other
     'Uber': 'Uber.jpg',
     'Fiverr': 'Fiverr - Freelance Service.jpg',
-    'Lightroom': 'LightroomideoEditor.png',
-   };
+    'Lightroom': 'LightroomideoEditor.png'
+};
+// NOTE: in your original file 'Kooora Live' appeared twice (jpg under Streaming, png under
+// Entertainment). The later one silently won (KoooraLive.png). The jpg entry above now wins;
+// the card falls back to a generated icon if the file is missing. Swap the extension if needed.
 
 
 // ==================== Brand colours used for generated fallback icons ====================
@@ -223,17 +225,18 @@ const appColors = {
 // ==================== Translations ====================
 const I18N = {
     ar: {
-        title: 'CHELLAT STORE | متجر تطبيقات وألعاب الأندرويد والآيفون',
+        title: 'CHELAT-STORY | متجر تطبيقات وألعاب الأندرويد والآيفون',
         searchPlaceholder: 'ابحث عن تطبيق...',
         skip: 'انتقل إلى المحتوى',
         heroTitle: 'حمّل أشهر التطبيقات والألعاب بسهولة',
         heroText: 'اكتشف أكثر من {n} تطبيق ولعبة مختارة لأندرويد وآيفون، مرتبة حسب الفئة وبروابط تحميل من المتاجر الرسمية.',
-        featuredTitle: '🔥 الأكثر تميزاً',
+        featuredTitle: 'الأكثر تميزاً',
         featured: 'مميز',
         download: 'تحميل',
         downloadNow: 'تحميل الآن',
         appsCount: 'تطبيق',
         browse: 'تصفح الفئات',
+        platforms: 'أندرويد وآيفون', officialTitle: 'متاجر رسمية', officialText: 'روابط تحميل آمنة', categoriesTitle: '20 فئة', categoriesText: 'مرتبة بعناية',
         noResults: 'لا توجد نتائج مطابقة لبحثك',
         newsSection: 'أخبار التقنية',
         contactSection: 'تواصل معنا',
@@ -262,17 +265,18 @@ const I18N = {
         }
     },
     en: {
-        title: 'CHELLAT STORE | Android & iPhone Apps and Games Store',
+        title: 'CHELAT-STORY | Android & iPhone Apps and Games Store',
         searchPlaceholder: 'Search for an app...',
         skip: 'Skip to content',
         heroTitle: 'Download the most popular apps and games',
         heroText: 'Discover {n}+ handpicked apps and games for Android and iPhone, organised by category with links to the official stores.',
-        featuredTitle: '🔥 Featured Apps',
+        featuredTitle: 'Featured apps',
         featured: 'Featured',
         download: 'Download',
         downloadNow: 'Download Now',
         appsCount: 'apps',
         browse: 'Browse categories',
+        platforms: 'Android and iPhone', officialTitle: 'Official stores', officialText: 'Safe download links', categoriesTitle: '20 categories', categoriesText: 'Neatly organised',
         noResults: 'No apps match your search',
         newsSection: 'Tech News',
         contactSection: 'Contact Us',
@@ -301,17 +305,18 @@ const I18N = {
         }
     },
     fr: {
-        title: 'CHELLAT STORE | Boutique d’applications et jeux Android & iPhone',
+        title: 'CHELAT-STORY | Boutique d’applications et jeux Android & iPhone',
         searchPlaceholder: 'Rechercher une application...',
         skip: 'Aller au contenu',
         heroTitle: 'Téléchargez les applis et jeux les plus populaires',
         heroText: 'Découvrez plus de {n} applications et jeux sélectionnés pour Android et iPhone, classés par catégorie, avec des liens vers les boutiques officielles.',
-        featuredTitle: '🔥 En Vedette',
+        featuredTitle: 'En vedette',
         featured: 'Vedette',
         download: 'Télécharger',
         downloadNow: 'Télécharger',
         appsCount: 'applis',
         browse: 'Parcourir les catégories',
+        platforms: 'Android et iPhone', officialTitle: 'Boutiques officielles', officialText: 'Liens sûrs', categoriesTitle: '20 catégories', categoriesText: 'Bien classées',
         noResults: 'Aucune application ne correspond à votre recherche',
         newsSection: 'Actualités tech',
         contactSection: 'Contactez-nous',
@@ -398,8 +403,7 @@ function createCard(app, featured) {
     img.src = getImagePath(app.name) || fb;
 
     const rating = el('div', 'app-rating');
-    const full = Math.round(app.rating);
-    rating.textContent = app.rating + ' ' + '★'.repeat(full) + '☆'.repeat(5 - full);
+    rating.textContent = '★ ' + app.rating.toFixed(1);
     rating.setAttribute('aria-label', app.rating + ' / 5');
 
     const btn = el('a', 'download-btn');
@@ -605,10 +609,10 @@ document.addEventListener('DOMContentLoaded', () => {
         themeToggle.innerHTML = theme === 'dark' ? '<i class="fas fa-sun" aria-hidden="true"></i>' : '<i class="fas fa-moon" aria-hidden="true"></i>';
         darkToggle.checked = theme === 'dark';
         const meta = document.querySelector('meta[name="theme-color"]');
-        if (meta) meta.content = theme === 'dark' ? '#0f172a' : '#aab4c8';
+        if (meta) meta.content = theme === 'dark' ? '#070b16' : '#eef2fb';
     }
     const flip = () => setTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark', true);
-    setTheme(document.documentElement.dataset.theme || 'light', false);
+    setTheme(document.documentElement.dataset.theme || 'dark', false);
     themeToggle.addEventListener('click', flip);
     darkToggle.addEventListener('change', flip);
     if (window.matchMedia) {
