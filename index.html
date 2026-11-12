@@ -1,196 +1,118 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl" data-theme="light">
+<html lang="ar" dir="rtl" data-theme="dark">
 <head>
-    <link rel="icon" type="image/png" href="assets/images/icons/logo.png">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>CHELAT STORE | متجر تطبيقات وألعاب الأندرويد والآيفون</title>
-
-    <!-- Apply saved theme/language BEFORE first paint (prevents flash) -->
-    <script>
-        (function () {
-            try {
-                var d = document.documentElement;
-                var th = localStorage.getItem('qs_theme');
-                if (!th) th = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                d.setAttribute('data-theme', th);
-                var l = localStorage.getItem('qs_lang');
-                if (l === 'ar' || l === 'en' || l === 'fr') { d.lang = l; d.dir = l === 'ar' ? 'rtl' : 'ltr'; }
-            } catch (e) {}
-        })();
-    </script>
-
-    <!-- SEO -->
-    <meta name="description" content="CHELAT STORE: اكتشف أكثر من 100 تطبيق ولعبة لأندرويد وآيفون مرتبة حسب الفئة، مع بحث سريع وروابط تحميل من المتاجر الرسمية.">
-    <meta name="keywords" content="تحميل تطبيقات, ألعاب أندرويد, تطبيقات آيفون, متجر تطبيقات, واتساب, تيك توك, ببجي, فري فاير">
-    <meta name="author" content="Mouhssine Chellat">
-    <meta name="robots" content="index, follow, max-image-preview:large">
-    <meta name="theme-color" content="#aab4c8">
-    <link rel="canonical" href="https://YOUR-DOMAIN.com/">
-
-    <!-- Open Graph / Twitter -->
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="CHELAT STORE">
-    <meta property="og:title" content="CHELAT STORE | متجر تطبيقات وألعاب الأندرويد والآيفون">
-    <meta property="og:description" content="أكثر من 100 تطبيق ولعبة مختارة مع بحث سريع ووضع ليلي وروابط تحميل رسمية.">
-    <meta property="og:url" content="https://YOUR-DOMAIN.com/">
-    <meta property="og:image" content="https://YOUR-DOMAIN.com/assets/images/og-image.png">
-    <meta property="og:locale" content="ar_AR">
-    <meta name="twitter:card" content="summary_large_image">
-
-    <!-- Structured data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "CHELAT STORE",
-      "url": "https://YOUR-DOMAIN.com/",
-      "inLanguage": ["ar", "en", "fr"],
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://YOUR-DOMAIN.com/?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    }
-    </script>
-
-    <!-- Performance: connect early to the icon CDN -->
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CHELAT-STORY | متجر تطبيقات وألعاب الأندرويد والآيفون</title>
+    <meta name="description" content="CHELAT-STORY: discover and download popular apps and games for Android and iPhone.">
+    <meta name="theme-color" content="#070b16">
+    <link rel="icon" type="image/svg+xml" href="assets/images/Profile.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <script>
+        // Apply saved theme before first paint (default: dark)
+        try { var t = localStorage.getItem('qs_theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+    </script>
 </head>
 <body>
     <a class="skip-link" href="#main" data-key="skip">انتقل إلى المحتوى</a>
 
-    <!-- Header -->
     <header class="site-header">
-        <button class="icon-btn menu-toggle" id="menuToggle" data-aria="menu" aria-label="فتح القائمة" aria-controls="sidebar" aria-expanded="false">
-            <i class="fas fa-bars" aria-hidden="true"></i>
-        </button>
-
-        <a class="logo-container" href="./" aria-label="CHELAT STORE">
-            <img src="assets/images/icons/logo.png" alt="" width="42" height="42" onerror="this.remove()">
-            <span>CHELAT STORE</span>
-        </a>
-
-        <div class="header-controls">
-            <button class="icon-btn lang-toggle" id="langToggle" data-aria="changeLang" aria-label="تغيير اللغة">
-                <span class="lang-text">EN</span>
-                <i class="fas fa-globe" aria-hidden="true"></i>
-            </button>
-            <button class="icon-btn theme-toggle" id="themeToggle" data-aria="theme" aria-label="تبديل الوضع">
-                <i class="fas fa-moon" aria-hidden="true"></i>
-            </button>
-        </div>
-
-        <div class="search-box">
-            <input type="search" id="searchInput" placeholder="ابحث عن تطبيق..." autocomplete="off" enterkeyhint="search" aria-label="بحث">
-            <button class="search-clear" id="searchClear" type="button" data-aria="clear" aria-label="مسح البحث"><i class="fas fa-times" aria-hidden="true"></i></button>
+        <div class="wrap header-inner">
+            <button class="icon-btn" id="menuToggle" type="button" aria-expanded="false" aria-controls="sidebar" data-aria="menu"><i class="fas fa-bars" aria-hidden="true"></i></button>
+            <a class="brand" href="#top" aria-label="CHELAT-STORY">
+                <span class="avatar"><img src="assets/images/Profile.svg" alt="CHELAT-STORY" width="46" height="46"></span>
+                <span class="brand-name">CHELAT-STORY<small>APPS &amp; GAMES</small></span>
+            </a>
+            <div class="search-box">
+                <i class="fas fa-search" aria-hidden="true"></i>
+                <label class="sr-only" for="searchInput">Search</label>
+                <input type="search" id="searchInput" autocomplete="off" placeholder="ابحث عن تطبيق...">
+                <button class="search-clear" id="searchClear" type="button" data-aria="clear"><i class="fas fa-times" aria-hidden="true"></i></button>
+            </div>
+            <div class="header-controls">
+                <button class="icon-btn lang-toggle" id="langToggle" type="button" data-aria="changeLang"><i class="fas fa-globe" aria-hidden="true"></i><span class="lang-text">EN</span></button>
+                <button class="icon-btn" id="themeToggle" type="button" data-aria="theme"></button>
+            </div>
         </div>
     </header>
 
-    <!-- Sidebar -->
-    <aside class="sidebar" id="sidebar" aria-label="CHELAT STORE">
+    <aside class="sidebar" id="sidebar" aria-label="Menu">
         <div class="sidebar-header">
-            <h3>📱 CHELAT STORE</h3>
-            <button class="sidebar-close" id="sidebarClose" data-aria="closeMenu" aria-label="إغلاق القائمة">
-                <i class="fas fa-times" aria-hidden="true"></i>
-            </button>
+            <span class="brand"><span class="avatar"><img src="assets/images/Profile.svg" alt="" width="40" height="40"></span><span class="brand-name">CHELAT-STORY</span></span>
+            <button class="sidebar-close" id="sidebarClose" type="button" data-aria="closeMenu"><i class="fas fa-times" aria-hidden="true"></i></button>
         </div>
-
         <div class="sidebar-section">
-            <h4 class="section-title"><i class="fas fa-newspaper" aria-hidden="true"></i> <span data-key="newsSection">أخبار التقنية</span></h4>
-            <div class="news-links">
-                <a href="https://www.aljazeera.net" target="_blank" rel="noopener noreferrer" class="news-item"><i class="fas fa-globe" aria-hidden="true"></i> <span>الجزيرة نت</span></a>
-                <a href="https://www.bbc.com/arabic" target="_blank" rel="noopener noreferrer" class="news-item"><i class="fas fa-broadcast-tower" aria-hidden="true"></i> <span>BBC Arabic</span></a>
-                <a href="https://www.france24.com/ar" target="_blank" rel="noopener noreferrer" class="news-item"><i class="fas fa-tv" aria-hidden="true"></i> <span>France 24</span></a>
-            </div>
+            <h3 class="section-title"><i class="fas fa-chart-simple" aria-hidden="true"></i><span data-key="statsSection">إحصائيات المتجر</span></h3>
+            <div class="row"><span data-key="totalApps">تطبيق</span><b id="statTotal"></b></div>
+            <div class="row"><span data-key="avgRating">متوسط التقييم</span><b id="statRating"></b></div>
         </div>
-
         <div class="sidebar-section">
-            <h4 class="section-title"><i class="fas fa-headset" aria-hidden="true"></i> <span data-key="contactSection">تواصل معنا</span></h4>
-            <div class="contact-links">
-                <a href="https://wa.me/212621681357" target="_blank" rel="noopener noreferrer" class="contact-item whatsapp"><i class="fab fa-whatsapp" aria-hidden="true"></i> <span data-key="whatsapp">واتساب</span></a>
-                <a href="mailto:Mouhssinechellat@gmail.com" class="contact-item email"><i class="fas fa-envelope" aria-hidden="true"></i> <span data-key="email">البريد الإلكتروني</span></a>
-                <a href="tel:+212621681357" class="contact-item phone"><i class="fas fa-phone" aria-hidden="true"></i> <span data-key="phone">اتصل بنا</span></a>
-            </div>
+            <h3 class="section-title"><i class="fas fa-headset" aria-hidden="true"></i><span data-key="contactSection">تواصل معنا</span></h3>
+            <!-- TODO: replace the # links with your real contact details -->
+            <a class="side-link" href="#"><span data-key="whatsapp">واتساب</span><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+            <a class="side-link" href="#"><span data-key="email">البريد الإلكتروني</span><i class="fas fa-envelope" aria-hidden="true"></i></a>
         </div>
-
-        <div class="sidebar-section settings-section">
-            <h4 class="section-title"><i class="fas fa-cog" aria-hidden="true"></i> <span data-key="settingsSection">الإعدادات</span></h4>
-            <div class="setting-item">
-                <div class="setting-label"><i class="fas fa-moon" aria-hidden="true"></i> <span data-key="darkMode">الوضع الليلي</span></div>
-                <label class="toggle-switch">
-                    <input type="checkbox" id="darkModeToggle" aria-label="الوضع الليلي">
-                    <span class="toggle-slider"></span>
-                </label>
+        <div class="sidebar-section">
+            <h3 class="section-title"><i class="fas fa-sliders" aria-hidden="true"></i><span data-key="settingsSection">الإعدادات</span></h3>
+            <div class="row"><span data-key="darkMode">الوضع الليلي</span><label class="switch"><input type="checkbox" id="darkModeToggle" data-aria="theme"><span></span></label></div>
+            <div class="row" style="display:block"><div style="margin-bottom:8px" data-key="language">اللغة</div>
+                <div class="lang-switch"><button class="lang-btn" type="button" data-lang="ar">AR</button><button class="lang-btn" type="button" data-lang="en">EN</button><button class="lang-btn" type="button" data-lang="fr">FR</button></div>
             </div>
-            <div class="setting-item">
-                <div class="setting-label"><i class="fas fa-language" aria-hidden="true"></i> <span data-key="language">اللغة</span></div>
-                <div class="lang-selector">
-                    <button class="lang-btn active" data-lang="ar" type="button">العربية</button>
-                    <button class="lang-btn" data-lang="en" type="button">English</button>
-                    <button class="lang-btn" data-lang="fr" type="button">Français</button>
-                </div>
-            </div>
+            <a class="side-link" href="privacy.html"><span data-key="privacy">سياسة الخصوصية</span><i class="fas fa-shield-halved" aria-hidden="true"></i></a>
         </div>
-
-        <div class="sidebar-section stats-section">
-            <h4 class="section-title"><i class="fas fa-chart-line" aria-hidden="true"></i> <span data-key="statsSection">إحصائيات المتجر</span></h4>
-            <div class="stats-grid">
-                <div class="stat-item"><span class="stat-number" id="statTotal">100+</span><span class="stat-label" data-key="totalApps">تطبيق</span></div>
-                <div class="stat-item"><span class="stat-number" id="statRating">4.5★</span><span class="stat-label" data-key="avgRating">متوسط التقييم</span></div>
-            </div>
-        </div>
-
-        <!-- AD: sidebar (loads only when the menu is opened) -->
         <div class="sidebar-section"><div data-ad="sidebar"></div></div>
-
-        <div class="sidebar-footer">
-            <p>© 2026 CHELAT STORE</p>
-            <small data-key="footer">جميع الحقوق محفوظة</small><br>
-            <a href="privacy.html" data-key="privacy">سياسة الخصوصية</a>
-        </div>
     </aside>
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
     <main id="main">
-        <!-- Intro text: gives search engines and AdSense reviewers real content -->
-        <section class="hero">
-            <h1 data-key="heroTitle">حمّل أشهر التطبيقات والألعاب بسهولة</h1>
-            <p data-key="heroText">اكتشف أكثر من 100 تطبيق ولعبة مختارة لأندرويد وآيفون، مرتبة حسب الفئة وبروابط تحميل من المتاجر الرسمية.</p>
+        <div id="top"></div>
+        <section class="wrap hero">
+            <div>
+                <h1 data-key="heroTitle">حمّل أشهر التطبيقات والألعاب بسهولة</h1>
+                <p data-key="heroText"></p>
+                <div class="hero-cta"><a class="btn btn-primary" href="#chips"><i class="fas fa-compass" aria-hidden="true"></i><span data-key="browse">تصفح الفئات</span></a></div>
+            </div>
+            <div class="hero-visual"><div class="avatar hero-avatar"><img src="assets/images/Profile.svg" alt="CHELAT-STORY profile" width="300" height="300" fetchpriority="high"></div></div>
         </section>
 
-        <!-- AD: top leaderboard (above the fold, clearly separated from content) -->
-        <div data-ad="top"></div>
+        <div class="wrap">
+            <div class="stats">
+                <div class="stat"><i class="fas fa-mobile-screen" aria-hidden="true"></i><div><b>Android &amp; iPhone</b><span data-key="platforms">أندرويد وآيفون</span></div></div>
+                <div class="stat"><i class="fas fa-store" aria-hidden="true"></i><div><b data-key="officialTitle">متاجر رسمية</b><span data-key="officialText">روابط تحميل آمنة</span></div></div>
+                <div class="stat"><i class="fas fa-star" aria-hidden="true"></i><div><b data-key="categoriesTitle">20 فئة</b><span data-key="categoriesText">مرتبة بعناية</span></div></div>
+            </div>
 
-        <h2 class="section-heading" id="featuredHeading" data-key="featuredTitle">🔥 الأكثر تميزاً</h2>
-        <div class="slider-section" id="sliderContainer"></div>
+            <div data-ad="top"></div>
 
-        <!-- Category quick-jump chips (engagement + internal navigation) -->
-        <nav class="chips" id="chips" data-aria="browse" aria-label="تصفح الفئات"></nav>
+            <h2 class="block-title" id="featuredHeading" data-key="featuredTitle">الأكثر تميزاً</h2>
+            <div class="slider-container" id="sliderContainer"></div>
 
-        <!-- Categories + in-feed ads are generated by js/main.js -->
-        <div id="categoriesContainer"></div>
+            <h2 class="block-title" data-key="browse">تصفح الفئات</h2>
+            <nav class="chips" id="chips" aria-label="Categories"></nav>
 
-        <!-- AD: end of content -->
-        <div data-ad="footer"></div>
+            <div id="categoriesContainer"></div>
+            <div data-ad="footer"></div>
+        </div>
     </main>
 
     <footer class="site-footer">
-        <nav>
-            <a href="privacy.html" data-key="privacy">سياسة الخصوصية</a>
-            <a href="mailto:Mouhssinechellat@gmail.com" data-key="email">البريد الإلكتروني</a>
-            <a href="https://wa.me/212621681357" target="_blank" rel="noopener noreferrer" data-key="whatsapp">واتساب</a>
-        </nav>
-        <p>© 2026 CHELAT STORE — <span data-key="footer">جميع الحقوق محفوظة</span></p>
-        <p class="disclaimer" data-key="disclaimer">جميع أسماء التطبيقات والشعارات هي علامات تجارية لأصحابها، وتُعرض هنا لأغراض التعريف فقط. روابط التحميل تقود إلى المتاجر الرسمية.</p>
+        <div class="wrap">
+            <span class="avatar"><img src="assets/images/Profile.svg" alt="" width="56" height="56" loading="lazy"></span>
+            <strong>CHELAT-STORY</strong>
+            <p data-key="disclaimer"></p>
+            <p>© <span id="year"></span> CHELAT-STORY · <span data-key="footer">جميع الحقوق محفوظة</span> · <a href="privacy.html" data-key="privacy">سياسة الخصوصية</a></p>
+        </div>
     </footer>
 
-    <button class="to-top" id="toTop" type="button" data-aria="top" aria-label="إلى الأعلى"><i class="fas fa-arrow-up" aria-hidden="true"></i></button>
+    <button class="to-top" id="toTop" type="button" data-aria="top"><i class="fas fa-arrow-up" aria-hidden="true"></i></button>
 
-    <script src="js/apps-data.js" defer></script>
-    <script src="js/ads.js" defer></script>
-    <script src="js/main.js" defer></script>
+    <script src="js/ads.js"></script>
+    <script src="js/apps-data.js"></script>
+    <script src="js/main.js"></script>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
