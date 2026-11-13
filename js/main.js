@@ -41,7 +41,7 @@ const fileMap = {
     'Subway Surfers': 'SubwaySurfers.jpg',
     'Candy Crush': 'CandyCrush.jpg',
     'eFootball PES': 'eFootball.jpg',
-    '8 Ball Pool': 'pool-balls (1).png',
+    '8 Ball Pool': 'pool-balls.png',
     'Ludo King': 'LudoKing.jpg',
     'Asphalt 9': 'Asphalt9.jpg',
     'Snake': 'Snake.jpg',
