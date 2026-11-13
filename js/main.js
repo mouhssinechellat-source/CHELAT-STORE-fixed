@@ -30,6 +30,7 @@ const fileMap = {
     'Telegram X': 'telegram_x.jpg',
     'Instagram Lite': 'instagram_lite.jpg',
     'TikTok Lite': 'tiktok_lite.jpg',
+    'YouTube': 'YOUTUBE.jpg',
 
     // Games
     'Free Fire': 'freefire.jpg',
