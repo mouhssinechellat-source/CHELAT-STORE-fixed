@@ -43,6 +43,12 @@ const appsData = [
     { id: 35, name: "Asphalt 9", rating: 4.6, downloadLink: "#", category: "Games", isFeatured: false },
     { id: 36, name: "Snake", rating: 4.2, downloadLink: "#", category: "Games", isFeatured: false },
     { id: 37, name: "Free Fire MAX", rating: 4.7, downloadLink: "#", category: "Games", isFeatured: false },
+    { id: 100, name: "YouTube", rating: 4.9, downloadLink: "#", category: "Video", isFeatured: true },
+    { id: 101, name: "Brawl Stars", rating: 4.8, downloadLink: "#", category: "Games", isFeatured: false },
+    { id: 102, name: "Block Blast!", rating: 4.7, downloadLink: "#", category: "Games", isFeatured: false },
+    { id: 103, name: "EA Sports FC Mobile", rating: 4.6, downloadLink: "#", category: "Games", isFeatured: false },
+    { id: 104, name: "Stardew Valley", rating: 4.9, downloadLink: "#", category: "Games", isFeatured: false },
+    { id: 105, name: "CarX Street", rating: 4.5, downloadLink: "#", category: "Games", isFeatured: false },
     
     // ==================== MUSIC & VIDEO ====================
     { id: 38, name: "Spotify", rating: 4.8, downloadLink: "#", category: "Music", isFeatured: false },
