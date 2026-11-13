@@ -47,6 +47,11 @@ const fileMap = {
     'Asphalt 9': 'Asphalt9.jpg',
     'Snake': 'Snake.jpg',
     'Free Fire MAX': 'freefire_max.jpg',
+   'Brawl Stars': 'brawl_stars.jpg',
+    'Block Blast!': 'block_blast.jpg',
+    'EA Sports FC Mobile': 'fc_mobile.jpg',
+    'Stardew Valley': 'stardew_valley.jpg',
+    'CarX Street': 'carx_street.jpg',
 
     // Music & Video
     'Spotify': 'Spotify.jpg',
