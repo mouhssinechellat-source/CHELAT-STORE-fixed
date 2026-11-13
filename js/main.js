@@ -50,6 +50,7 @@ const fileMap = {
     // Music & Video
     'Spotify': 'Spotify.jpg',
     'YouTube Music': 'YouTube.jpg',
+   'YouTube ': 'YouTubee.jpg',
     'SoundCloud': 'SoundCloud.jpg',
     'Deezer': 'Deezer.jpg',
     'VLC Player': 'vlc.png',
