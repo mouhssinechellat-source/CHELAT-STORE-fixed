@@ -47,7 +47,7 @@ const fileMap = {
     'Asphalt 9': 'Asphalt9.jpg',
     'Snake': 'Snake.jpg',
     'Free Fire MAX': 'freefire_max.jpg',
-    'Brawl Stars': 'brawl_stars.jpg',
+   'Brawl Stars': 'brawl_stars.jpg',
     'Block Blast!': 'block_blast.jpg',
     'EA Sports FC Mobile': 'fc_mobile.jpg',
     'Stardew Valley': 'stardew_valley.jpg',
@@ -164,6 +164,10 @@ const fileMap = {
     'Fiverr': 'Fiverr - Freelance Service.jpg',
     'Lightroom': 'LightroomideoEditor.png'
 };
+// NOTE: in your original file 'Kooora Live' appeared twice (jpg under Streaming, png under
+// Entertainment). The later one silently won (KoooraLive.png). The jpg entry above now wins;
+// the card falls back to a generated icon if the file is missing. Swap the extension if needed.
+
 
 // ==================== Brand colours used for generated fallback icons ====================
 const appColors = {
@@ -224,26 +228,6 @@ const appColors = {
     'Avast Antivirus': 'FF7800',
     'Opera': 'FF1B2D'
 };
-
-// ==================== Apps Data (Main List) ====================
-const appsData = [
-    // أضفنا التطبيقات الجديدة هنا لكي تظهر رسمياً في الموقع
-    { name: 'YouTube', category: 'Video', rating: 4.9, isFeatured: true },
-    { name: 'Brawl Stars', category: 'Games', rating: 4.8, isFeatured: false },
-    { name: 'Block Blast!', category: 'Games', rating: 4.7, isFeatured: false },
-    { name: 'EA Sports FC Mobile', category: 'Games', rating: 4.6, isFeatured: false },
-    { name: 'Stardew Valley', category: 'Games', rating: 4.9, isFeatured: false },
-    { name: 'CarX Street', category: 'Games', rating: 4.5, isFeatured: false },
-    
-    // وبقية التطبيقات الأصلية لديك...
-    { name: 'PUBG Mobile', category: 'Games', rating: 4.7, isFeatured: true },
-    { name: 'FIFA Mobile', category: 'Games', rating: 4.5, isFeatured: true },
-    { name: 'Netflix', category: 'Streaming', rating: 4.8, isFeatured: true },
-    { name: 'WhatsApp', category: 'Social', rating: 4.9, isFeatured: false },
-    { name: 'Instagram', category: 'Social', rating: 4.7, isFeatured: false },
-    { name: 'Telegram', category: 'Social', rating: 4.8, isFeatured: false },
-    { name: 'Free Fire', category: 'Games', rating: 4.6, isFeatured: false }
-];
 
 // ==================== Translations ====================
 const I18N = {
@@ -440,7 +424,7 @@ function createCard(app, featured) {
     return card;
 }
 
-// ==================== Rendering ====================
+// ==================== Rendering (runs ONCE - search only toggles visibility) ====================
 const ui = { sections: [], chips: [] };
 
 function renderApps() {
@@ -490,6 +474,7 @@ function renderApps() {
         chip.append(ci, el('span'));
         chipsEl.appendChild(chip);
 
+        // In-feed ads: between sections, capped, never right next to download buttons
         const n = i + 1;
         if (adsPlaced < cfg.maxInfeed && n >= cfg.infeedFirstAfter && (n - cfg.infeedFirstAfter) % cfg.infeedEvery === 0 && n < keys.length) {
             const ad = QSAds.create('infeed');
@@ -546,7 +531,7 @@ function updateCounts() {
     });
 }
 
-// ==================== Search ====================
+// ==================== Search (toggles visibility - no re-render, so ads never reload) ====================
 function applySearch(raw) {
     const term = raw.toLowerCase().trim();
     const t = T();
@@ -588,11 +573,13 @@ document.addEventListener('DOMContentLoaded', () => {
     QSAds.hydrate();
     renderApps();
 
+    // ---------- Header height (for scroll offset) ----------
     const header = document.querySelector('.site-header');
     const setHeaderH = () => document.documentElement.style.setProperty('--header-h', header.offsetHeight + 'px');
     setHeaderH();
     if ('ResizeObserver' in window) new ResizeObserver(setHeaderH).observe(header);
 
+    // ---------- Sidebar ----------
     const menuToggle = document.getElementById('menuToggle');
     const sidebar = document.getElementById('sidebar');
     const overlay = document.getElementById('sidebarOverlay');
@@ -604,7 +591,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.add('sidebar-open');
         menuToggle.setAttribute('aria-expanded', 'true');
         closeBtn.focus();
-        setTimeout(QSAds.pushAll, 400);
+        setTimeout(QSAds.pushAll, 400);   // load the sidebar ad only once it is actually visible
     }
     function closeSidebar() {
         if (!sidebar.classList.contains('active')) return;
@@ -620,6 +607,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSidebar(); });
     sidebar.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setTimeout(closeSidebar, 250)));
 
+    // ---------- Theme ----------
     const themeToggle = document.getElementById('themeToggle');
     const darkToggle = document.getElementById('darkModeToggle');
     function setTheme(theme, persist) {
@@ -634,13 +622,20 @@ document.addEventListener('DOMContentLoaded', () => {
     setTheme(document.documentElement.dataset.theme || 'dark', false);
     themeToggle.addEventListener('click', flip);
     darkToggle.addEventListener('change', flip);
+    if (window.matchMedia) {
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change', e => {
+            if (!store.get('qs_theme')) setTheme(e.matches ? 'dark' : 'light', false);
+        });
+    }
 
+    // ---------- Language ----------
     document.getElementById('langToggle').addEventListener('click', () => {
         applyLanguage(LANGS[(LANGS.indexOf(currentLang) + 1) % LANGS.length]);
     });
     document.querySelectorAll('.lang-btn').forEach(b => b.addEventListener('click', () => applyLanguage(b.dataset.lang)));
     applyLanguage(currentLang);
 
+    // ---------- Search ----------
     const input = document.getElementById('searchInput');
     let timer;
     input.addEventListener('input', e => {
@@ -655,10 +650,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const q = new URLSearchParams(location.search).get('q');
     if (q) { input.value = q; applySearch(q); }
 
+    // ---------- Stats ----------
     document.getElementById('statTotal').textContent = appsData.length + '+';
     const avg = appsData.reduce((s, a) => s + a.rating, 0) / appsData.length;
     document.getElementById('statRating').textContent = avg.toFixed(1) + '★';
 
+    // ---------- Back to top ----------
     const toTop = document.getElementById('toTop');
     let ticking = false;
     window.addEventListener('scroll', () => {
@@ -668,6 +665,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
     toTop.addEventListener('click', () => window.scrollTo({ top: 0 }));
 
+    // ---------- Ads ----------
     QSAds.initAnchor();
     QSAds.initConsentBanner(T);
     QSAds.startWhenIdle();
