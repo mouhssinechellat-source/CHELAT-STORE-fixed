@@ -41,7 +41,7 @@ const fileMap = {
     'Subway Surfers': 'SubwaySurfers.jpg',
     'Candy Crush': 'CandyCrush.jpg',
     'eFootball PES': 'eFootball.jpg',
-    '8 Ball Pool': 'pool-balls.png',
+    '8 Ball Pool': 'poolballs.jpg',
     'Ludo King': 'LudoKing.jpg',
     'Asphalt 9': 'Asphalt9.jpg',
     'Snake': 'Snake.jpg',
@@ -225,7 +225,7 @@ const appColors = {
 // ==================== Translations ====================
 const I18N = {
     ar: {
-        title: 'CHELAT-STORY | متجر تطبيقات وألعاب الأندرويد والآيفون',
+        title: 'CHELLAT-STORY | متجر تطبيقات وألعاب الأندرويد والآيفون',
         searchPlaceholder: 'ابحث عن تطبيق...',
         skip: 'انتقل إلى المحتوى',
         heroTitle: 'حمّل أشهر التطبيقات والألعاب بسهولة',
@@ -265,7 +265,7 @@ const I18N = {
         }
     },
     en: {
-        title: 'CHELAT-STORY | Android & iPhone Apps and Games Store',
+        title: 'CHELLAT-STORY | Android & iPhone Apps and Games Store',
         searchPlaceholder: 'Search for an app...',
         skip: 'Skip to content',
         heroTitle: 'Download the most popular apps and games',
@@ -305,7 +305,7 @@ const I18N = {
         }
     },
     fr: {
-        title: 'CHELAT-STORY | Boutique d’applications et jeux Android & iPhone',
+        title: 'CHELLAT-STORY | Boutique d’applications et jeux Android & iPhone',
         searchPlaceholder: 'Rechercher une application...',
         skip: 'Aller au contenu',
         heroTitle: 'Téléchargez les applis et jeux les plus populaires',
