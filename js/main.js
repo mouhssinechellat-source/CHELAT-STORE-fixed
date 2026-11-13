@@ -56,7 +56,7 @@ const fileMap = {
     'MX Player': 'MXPlayer.jpg',
     'InShot': 'InShot.jpg',
     'KineMaster': 'KineMaster.jpg',
-    'YouTube application': 'YouTubee.jpg',
+   'YouTube': 'youT.jpg',
 
     // Streaming
     'Shahid': 'Shahid.jpg',
