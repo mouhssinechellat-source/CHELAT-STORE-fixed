@@ -1,4 +1,4 @@
-# 📱 CHELAT STORE
+# 📱 CHELLAT STORE
 
 متجر تطبيقات وألعاب الأندرويد والآيفون — HTML / CSS / JavaScript خالص (بدون Build).
 
